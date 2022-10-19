@@ -1,0 +1,179 @@
+{
+  "login_title": "تسجيل الدخول",
+  "login": "دخول",
+  "username": "الأسم المستخدم",
+  "password": "الرقم السرى",
+  "invalid_credential": "البيانات غير صحيحة",
+  "welcome": "مرحبا",
+  "home": "الرئيسية",
+  "settings": "إعدادات رئيسية",
+  "zones": "مناطق",
+  "switch_language": "تحويل اللغة",
+  "dark_theme": "الوضع المظلم",
+  "logout": "تسجيل الخروج",
+  "zone": "منطقة",
+  "employee": "موظف",
+  "employees": "موظفين",
+  "manager": "مدير",
+  "managers": "مديرين",
+  "revenues": "إيرادات",
+  "yearly": "سنوية",
+  "code": "كود",
+  "reload": "إعادة تحميل",
+  "ar_name": "الأسم عربى",
+  "en_name": "الأسم إنجليزى",
+  "email": "البريد الألكترونى",
+  "fullname": "الاسم بالكامل",
+  "details": "تفاصيل",
+  "create_new": "إضافة جديد",
+  "download_demo_file": "تحميل ملف الديمو",
+  "you_can_change_language": "يمكنك تحويل لغة التطبيق",
+  "you_can_change_theme": "يمكنك تحويل شكل الثيم",
+  "revenues_last_5_years": "إيرادات اخر خمس سنوات",
+  "go_to_report": "مشاهدة التقرير",
+  "today_attendance": "الحضور اليوم حسب المنطقة",
+  "monthly_attendance": "الحضور الشهرى",
+  "attendance_rate_in_the_zones": "نسبة الحضور فى المناطق",
+  "delete": "حذف",
+  "delete_item": "حذف عنصر",
+  "confirm_delete_item": "تأكيد حذف عنصر",
+  "cancel": "إلغاء",
+  "confirm": "تأكيد",
+  "deleted_successfully": "تم الحذف",
+  "close": "إغلاق",
+  "all_managers_have_been_added": "تمت إضافة جميع المديرين",
+  "has_been_added": "تمت إضافة ",
+  "super_admin": "مشرف",
+  "status": "الحالة",
+  "active": "نشط",
+  "inactive": "غير نشط",
+  "search": "بحث",
+  "rate_attendance_today": "نسبة الحضور اليوم",
+  "absence": "الغياب",
+  "attendees": "الحضور",
+  "today": "اليوم",
+  "checkin": "حضور",
+  "checkout": "إنصراف",
+  "date": "تاريخ",
+  "day": "يوم",
+  "added_by": "أضيف بواسطة",
+  "attendance_code": "كود الحضور",
+  "hour": "ساعة",
+  "yearly_attendance_rate": "النسبة السنوية",
+  "switch_zone": "تحويل المنطقة",
+  "edit": "تعديل",
+  "add_new_attendance": "إضافة حضور جديد",
+  "days": [
+    {
+      "id": "Saturday",
+      "text": "السبت"
+    },
+    {
+      "id": "Sunday",
+      "text": "الأحد"
+    },
+    {
+      "id": "Monday",
+      "text": "الأثنين"
+    },
+    {
+      "id": "Tuesday",
+      "text": "الثلاثاء"
+    },
+    {
+      "id": "Wednesday",
+      "text": "الأربعاء"
+    },
+    {
+      "id": "Thursday",
+      "text": "الخميس"
+    },
+    {
+      "id": "Friday",
+      "text": "الجمعة"
+    }
+  ],
+  "month_list": [
+    {
+      "id": "January",
+      "text": "يناير"
+    },
+    {
+      "id": "February",
+      "text": "فبراير"
+    },
+    {
+      "id": "March",
+      "text": "مارس"
+    },
+    {
+      "id": "April",
+      "text": "إبريل"
+    },
+    {
+      "id": "May",
+      "text": "مايو"
+    },
+    {
+      "id": "June",
+      "text": "يونيو"
+    },
+    {
+      "id": "July",
+      "text": "يوليو"
+    },
+    {
+      "id": "August",
+      "text": "أغسطس"
+    },
+    {
+      "id": "September",
+      "text": "سيبتمبر"
+    },
+    {
+      "id": "October",
+      "text": "أكتوبر"
+    },
+    {
+      "id": "November",
+      "text": "نوفمبر"
+    },
+    {
+      "id": "December",
+      "text": "ديسمبر"
+    }
+  ],
+  "years_list": [
+    "2022",
+    "2021",
+    "2020",
+    "2019"
+  ],
+  "years": "السنوات",
+  "saved": "تم الحفظ",
+  "months": "الشهور",
+  "from": "من",
+  "notifications": "الأشعارات",
+  "App\\Notifications\\EmployeeReportNotification": "بلاغات موظف",
+  "clear_all": "حذف الكل",
+  "send": "إرسال",
+  "send_report": "إرسال بلاغ",
+  "report": "بلاغ",
+  "sent": "تم الإرسال",
+  "add_report": "إنشاء بلاغ",
+  "sort": "فرز",
+  "employee_sort_list": [
+    {
+      "id": "",
+      "text": "الكل"
+    },
+    {
+      "id": "checkin",
+      "text": "سجل حضور"
+    },
+    {
+      "id": "checkout",
+      "text": "سجل إنصراف"
+    }
+  ]
+}

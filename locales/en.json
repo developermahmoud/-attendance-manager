@@ -1,0 +1,179 @@
+{
+  "login_title": "Login",
+  "login": "Login",
+  "username": "Username",
+  "password": "Password",
+  "invalid_credential": "Invalid Credential",
+  "welcome": "Welcome",
+  "home": "Home",
+  "settings": "Settings",
+  "zones": "Zones",
+  "switch_language": "Switch Language",
+  "dark_theme": "Dark Theme",
+  "logout": "Logout",
+  "zone": "Zone",
+  "employee": "Employee",
+  "employees": "Employees",
+  "manager": "Manager",
+  "managers": "Managers",
+  "revenues": "Revenues",
+  "yearly": "Yearly",
+  "code": "Code",
+  "reload": "Reload",
+  "ar_name": "Arabic Name",
+  "en_name": "English Name",
+  "email": "Email",
+  "fullname": "Fullname",
+  "details": "Details",
+  "create_new": "Create New",
+  "download_demo_file": "Download Demo File",
+  "you_can_change_language": "you can swith language",
+  "you_can_change_theme": "You can swith theme",
+  "revenues_last_5_years": "Revenues last five years",
+  "go_to_report": "Go to report",
+  "today_attendance": "Today's attendance",
+  "monthly_attendance": "Monthly attendance",
+  "attendance_rate_in_the_zones": "Attendance rate in the zones",
+  "delete": "Delete",
+  "delete_item": "Delete Item",
+  "confirm_delete_item": "Confirm delete item",
+  "cancel": "Cancel",
+  "confirm": "Confirm",
+  "deleted_successfully": "Deleted successfully",
+  "close": "Close",
+  "all_managers_have_been_added": "All managers have been added",
+  "has_been_added": "Has been added",
+  "super_admin": "Super admin",
+  "status": "Status",
+  "active": "Active",
+  "inactive": "In active",
+  "search": "Search",
+  "rate_attendance_today": "Attendance rate today",
+  "absence": "Absence",
+  "attendees": "Attendees",
+  "today": "Today",
+  "checkin": "Check In",
+  "checkout": "Check Out",
+  "date": "Date",
+  "day": "Day",
+  "added_by": "Added By",
+  "attendance_code": "Attendance Code",
+  "hour": "Hour",
+  "yearly_attendance_rate": "Yearly Attendance Rate",
+  "switch_zone": "Switch Zone",
+  "edit": "Edit",
+  "add_new_attendance": "Add New Attendance",
+  "days": [
+    {
+      "id": "Saturday",
+      "text": "Saturday"
+    },
+    {
+      "id": "Sunday",
+      "text": "Sunday"
+    },
+    {
+      "id": "Monday",
+      "text": "Monday"
+    },
+    {
+      "id": "Tuesday",
+      "text": "Tuesday"
+    },
+    {
+      "id": "Wednesday",
+      "text": "Wednesday"
+    },
+    {
+      "id": "Thursday",
+      "text": "Thursday"
+    },
+    {
+      "id": "Friday",
+      "text": "Friday"
+    }
+  ],
+  "month_list": [
+    {
+      "id": "January",
+      "text": "January"
+    },
+    {
+      "id": "February",
+      "text": "February"
+    },
+    {
+      "id": "March",
+      "text": "March"
+    },
+    {
+      "id": "April",
+      "text": "April"
+    },
+    {
+      "id": "May",
+      "text": "May"
+    },
+    {
+      "id": "June",
+      "text": "June"
+    },
+    {
+      "id": "July",
+      "text": "July"
+    },
+    {
+      "id": "August",
+      "text": "August"
+    },
+    {
+      "id": "September",
+      "text": "September"
+    },
+    {
+      "id": "October",
+      "text": "October"
+    },
+    {
+      "id": "November",
+      "text": "November"
+    },
+    {
+      "id": "December",
+      "text": "December"
+    }
+  ],
+  "years_list": [
+    "2022",
+    "2021",
+    "2020",
+    "2019"
+  ],
+  "years": "Years",
+  "saved": "Saved",
+  "months": "Months",
+  "from": "From",
+  "notifications": "Notifications",
+  "App\\Notifications\\EmployeeReportNotification": "Employee Report",
+  "clear_all": "clear All",
+  "send": "Send",
+  "send_report": "Send Report",
+  "report": "Report",
+  "sent": "Sent",
+  "add_report": "Add Report",
+  "sort": "Sort",
+  "employee_sort_list": [
+    {
+      "id": "",
+      "text": "ALL"
+    },
+    {
+      "id": "checkin",
+      "text": "Checked In"
+    },
+    {
+      "id": "checkout",
+      "text": "Checked Out"
+    }
+  ]
+}
