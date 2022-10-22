@@ -1,12 +1,12 @@
 const url = "https://leeb8depa6.execute-api.us-east-2.amazonaws.com/";
-// const url = "http://localhost:8000/";
+//const url = "http://localhost:8000/";
 
 export default {
   ssr: false,
   target: "static",
   head: {
     titleTemplate: "%s - Nahda",
-    title: "Nahda",
+    title: "Nahda - Attendance Management",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },

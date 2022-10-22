@@ -7,6 +7,11 @@
       elevation="0"
       app
     >
+    <div class="white" style="border-radius: 8px;height:36px"> 
+        <img src="/logo.png" style="width: 36px;" class="pa-1" />
+      </div>
+      <div class="mx-1"></div>
+      <div class="hidden-sm-and-down">{{ $t('dss') }}</div>
       <v-spacer></v-spacer>
       <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">
