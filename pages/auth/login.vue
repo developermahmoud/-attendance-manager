@@ -8,31 +8,38 @@
         $t("login_title")
       }}</v-card-title>
       <v-card-text>
-        <v-alert type="error" text v-if="showError">{{
-          $t("invalid_credential")
-        }}</v-alert>
-        <form @submit.prevent="userLogin">
-          <v-text-field
-            :label="$t('username')"
-            outlined
-            v-model="login.username"
-          ></v-text-field>
-          <v-text-field
-            type="password"
-            :label="$t('password')"
-            outlined
-            v-model="login.password"
-          ></v-text-field>
-          <v-btn
-            :loading="isLoading"
-            :disabled="isLoading"
-            type="submit"
-            block
-            class="primary"
-            text
-            >{{ $t("login") }}</v-btn
+        <template v-if="login.longitude && login.latitude">
+          <v-alert type="error" text v-if="showError">{{
+            $t("invalid_credential")
+          }}</v-alert>
+          <form @submit.prevent="userLogin">
+            <v-text-field
+              :label="$t('username')"
+              outlined
+              v-model="login.username"
+            ></v-text-field>
+            <v-text-field
+              type="password"
+              :label="$t('password')"
+              outlined
+              v-model="login.password"
+            ></v-text-field>
+            <v-btn
+              :loading="isLoading"
+              :disabled="isLoading"
+              type="submit"
+              block
+              class="primary"
+              text
+              >{{ $t("login") }}</v-btn
+            >
+          </form>
+        </template>
+        <template v-else>
+          <v-btn block outlined color="success" @click="getLocation"
+            >Please Open your location</v-btn
           >
-        </form>
+        </template>
       </v-card-text>
     </v-card>
   </div>
@@ -41,6 +48,9 @@
 <script>
 export default {
   layout: "blank",
+  mounted() {
+    this.getLocation();
+  },
   data() {
     return {
       showError: false,
@@ -48,11 +58,27 @@ export default {
       login: {
         username: "",
         password: "",
+        latitude: null,
+        longitude: null,
         is_manager: true,
       },
     };
   },
   methods: {
+    getLocation() {
+      if (!navigator.geolocation) {
+        alert("Geolocation API not supported by this browser.");
+      } else {
+        navigator.geolocation.getCurrentPosition(this.success, this.error);
+      }
+    },
+    success(position) {
+      this.login.latitude = position.coords.latitude;
+      this.login.longitude = position.coords.longitude;
+    },
+    error() {
+      alert("Please open you loaction");
+    },
     async userLogin() {
       this.isLoading = true;
       this.showError = false;
