@@ -6,6 +6,24 @@
         <Nuxt />
       </v-container>
     </v-main>
+    <v-bottom-navigation fixed app class="bgSecondary">
+      <v-btn link to="/">
+        <span>{{ $t("employees") }}</span>
+
+        <v-icon>mdi-home</v-icon>
+      </v-btn>
+
+      <v-btn link to="/checkin">
+        <span>{{ $t("checkin") }}</span>
+
+        <v-icon>mdi-account-check-outline</v-icon>
+      </v-btn>
+
+      <v-btn link to="/checkout">
+        <span>{{ $t("checkout") }}</span>
+        <v-icon>mdi-check-all</v-icon>
+      </v-btn>
+    </v-bottom-navigation>
   </v-app>
 </template>
 

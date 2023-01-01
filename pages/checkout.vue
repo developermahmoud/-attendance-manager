@@ -173,16 +173,11 @@ export default {
     async getEmployees() {
       this.isLoading = true;
       this.employees = [];
-      let teamID = "";
-      if (this.$auth.user.Team_ID) {
-        teamID = this.$auth.user.Team_ID;
-      }
       await this.index({
         page: this.page,
         query: this.query,
-        sort: "",
+        sort: "checkout",
         zone: this.$auth.user.Zone_ID,
-        team_id: teamID,
       }).then((response) => {
         this.employees = response;
         this.employees.data = this.employees.data.map((item) => {

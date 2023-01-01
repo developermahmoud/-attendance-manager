@@ -1,5 +1,5 @@
-const url = "https://leeb8depa6.execute-api.us-east-2.amazonaws.com/";
-//const url = "http://localhost:8000/";
+// const url = "https://leeb8depa6.execute-api.us-east-2.amazonaws.com/";
+const url = "http://localhost:8000/";
 
 export default {
   ssr: false,

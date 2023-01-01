@@ -78,49 +78,6 @@
             </tbody>
           </template>
         </v-simple-table>
-        <div v-if="employee" class="mt-5">
-          <template v-if="!employee.today_attendees">
-            <v-select
-              v-model="attendanceCode"
-              outlined
-              dense
-              hide-details
-              class="mb-2 mt-2"
-              :label="$t('attendance_code')"
-              :items="attendanceCodes"
-              item-text="AttendanceCode_Name"
-              item-value="AttendanceCode_ID"
-            ></v-select>
-            <v-btn
-              @click="checkIn"
-              block
-              class="primary"
-              text
-              :loading="isSubmit"
-              :disabled="isSubmit"
-              outlined
-              tile
-              >{{ $t("checkin") }}</v-btn
-            >
-          </template>
-          <template
-            v-if="
-              employee.today_attendees && !employee.today_attendees.checkout
-            "
-          >
-            <v-btn
-              @click="checkOut"
-              block
-              :loading="isSubmit"
-              :disabled="isSubmit"
-              class="primary"
-              text
-              outlined
-              tile
-              >{{ $t("checkout") }}</v-btn
-            >
-          </template>
-        </div>
       </v-card-text>
     </v-card>
     <v-dialog v-model="reportDialog" max-width="700" persistent>
@@ -196,11 +153,6 @@ export default {
       ],
     };
   },
-  mounted() {
-    this.attendanceCodeListAction().then((response) => {
-      this.attendanceCodes = response;
-    });
-  },
   async fetch() {
     this.isLoading = true;
     await this.getByIdAction(this.$route.params.id).then((response) => {
@@ -212,31 +164,7 @@ export default {
     ...mapActions({
       getByIdAction: "employees/getById",
       sendReportAction: "employees/sendReport",
-      checkInAction: "attendees/checkIn",
-      checkOutAction: "attendees/checkOut",
-      attendanceCodeListAction: "attendanceCodeList",
     }),
-    checkIn() {
-      if (this.attendanceCode) {
-        this.isSubmit = true;
-        this.checkInAction({
-          attendance_code: this.attendanceCode,
-          id: this.employee.Emp_ID,
-          zone_id: this.employee.Zone_ID,
-        }).then((response) => {
-          this.employee.today_attendees = response;
-          this.isSubmit = false;
-        });
-      }
-    },
-    checkOut() {
-      this.isSubmit = true;
-      this.checkOutAction(this.employee.today_attendees.id).then((response) => {
-        this.isSubmit = false;
-        this.employee.today_attendees = response;
-        this.$fetch();
-      });
-    },
     async send() {
       if (this.body) {
         this.isSendReport = true;
