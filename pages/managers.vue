@@ -3,23 +3,6 @@
     <v-breadcrumbs :items="items" divider="-"></v-breadcrumbs>
     <v-card class="bgCard" flat tile>
       <v-card-text>
-        <v-select
-          v-if="isManager"
-          v-model="team_id"
-          outlined
-          dense
-          clearable
-          :disabled="isLoadingTeams"
-          :loading="isLoadingTeams"
-          :items="teams"
-          :label="$t('teams')"
-          item-value="Team_ID"
-          item-text="Team_Name"
-          @change="
-            page = 1;
-            $fetch();
-          "
-        ></v-select>
         <div class="d-flex">
           <v-text-field
             v-model="query"
@@ -41,7 +24,7 @@
           <v-list class="py-0 bgCard">
             <v-list-item
               class="bgListItem mb-2"
-              v-for="employee in employees.data"
+              v-for="employee in employees"
               :key="employee.Emp_ID"
             >
               <v-list-item-content>
@@ -119,12 +102,6 @@
               </v-list-item-content>
             </v-list-item>
           </v-list>
-          <div class="text-center" v-if="employees.total > 0">
-            <v-pagination
-              v-model="page"
-              :length="employees.last_page"
-            ></v-pagination>
-          </div>
         </template>
       </v-card-text>
     </v-card>
@@ -151,10 +128,7 @@ export default {
       page: 1,
       query: "",
       isManager: false,
-      isLoadingTeams: false,
       employees: [],
-      team_id: "",
-      teams: [],
       attendanceCodes: [],
       isSubmit: false,
       items: [
@@ -175,13 +149,8 @@ export default {
     };
   },
   async mounted() {
-    if (!this.$auth.user.Team_ID) {
-      this.isManager = true;
-      this.isLoadingTeams = true;
-      this.getTeamsAction(this.$auth.user.Zone_ID).then((response) => {
-        this.teams = response;
-        this.isLoadingTeams = false;
-      });
+    if (this.$auth.user.Team_ID) {
+      this.$router.push("/");
     }
     this.isLoadingCodes = true;
     await this.attendanceCodeListAction().then((response) => {
@@ -194,32 +163,19 @@ export default {
   },
   methods: {
     ...mapActions({
-      index: "employees/index",
+      index: "employees/getZoneManager",
       attendanceCodeListAction: "attendanceCodeList",
       checkInAction: "attendees/checkIn",
       checkOutAction: "attendees/checkOut",
-      getTeamsAction: "teams/getById",
     }),
     async getEmployees() {
       this.isLoading = true;
       this.employees = [];
-      let teamID = "";
-      if (this.team_id) {
-        teamID = this.team_id;
-      } else {
-        if (this.$auth.user.Team_ID) {
-          teamID = this.$auth.user.Team_ID;
-        }
-      }
       await this.index({
-        page: this.page,
-        query: this.query,
-        sort: "",
         zone: this.$auth.user.Zone_ID,
-        team_id: teamID,
       }).then((response) => {
         this.employees = response;
-        this.employees.data = this.employees.data.map((item) => {
+        this.employees = this.employees.map((item) => {
           item.attendanceCode = 1;
           return item;
         });

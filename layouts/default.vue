@@ -23,6 +23,11 @@
         <span>{{ $t("checkout") }}</span>
         <v-icon>mdi-check-all</v-icon>
       </v-btn>
+      
+      <v-btn link to="/managers" v-if="!$auth.user.Team_ID">
+        <span>{{ $t("managers") }}</span>
+        <v-icon>mdi-account-group-outline</v-icon>
+      </v-btn>
     </v-bottom-navigation>
   </v-app>
 </template>
